@@ -90,7 +90,7 @@
     }
 
     /* ============================================================ */
-    /* TRUCK LOADER (From Uiverse.io by vinodjangid07)              */
+    /* 1. TRUCK LOADER (From Uiverse.io by vinodjangid07)           */
     /* ============================================================ */
     .loader {
       width: fit-content;
@@ -110,26 +110,17 @@
       justify-content: flex-end;
       overflow-x: hidden;
     }
-    /* truck upper body */
     .truckBody {
       width: 130px;
       height: fit-content;
       margin-bottom: 6px;
       animation: motion 1s linear infinite;
     }
-    /* truck suspension animation*/
     @keyframes motion {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(3px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(3px); }
+      100% { transform: translateY(0px); }
     }
-    /* truck's tires */
     .truckTires {
       width: 130px;
       height: fit-content;
@@ -140,9 +131,7 @@
       position: absolute;
       bottom: 0;
     }
-    .truckTires svg {
-      width: 24px;
-    }
+    .truckTires svg { width: 24px; }
 
     .road {
       width: 100%;
@@ -185,9 +174,292 @@
     }
 
     @keyframes roadAnimation {
-      0% {
-        transform: translateX(0px);
-      }
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-350px); }
+    }
+
+    /* ============================================================ */
+    /* 2. GITHUB LOADER (From github.txt)                          */
+    /* ============================================================ */
+    .github-loader-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      width: 100%;
+      user-select: none;
+    }
+
+    .github-loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 200px;
+      height: 240px;
+    }
+
+    .github-glow {
+      position: absolute;
+      top: 15px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(130, 80, 223, 0.18) 50%, transparent 75%);
+      filter: blur(20px);
+      pointer-events: none;
+      animation: glowPulse 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .github-svg {
+      width: 160px;
+      height: 160px;
+      overflow: visible;
+      filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.35));
+    }
+
+    .github-loader .part {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.15);
+    }
+
+    .part-circle { animation-name: assembleCircle; }
+    .part-ear-left { animation-name: assembleLeftEar; }
+    .part-ear-right { animation-name: assembleRightEar; }
+    .part-head { animation-name: assembleHead; }
+    .part-tail { animation-name: assembleTail; }
+    .part-torso { animation-name: assembleTorso; }
+
+    @keyframes assembleCircle {
+      0% { opacity: 0; transform: scale(0.3); }
+      20% { opacity: 0.8; }
+      42%, 82% { opacity: 1; transform: scale(1); }
+      92%, 100% { opacity: 0; transform: scale(0.6); }
+    }
+
+    @keyframes assembleLeftEar {
+      0%, 8% { opacity: 0; transform: translate(-35px, -30px) rotate(-40deg) scale(0.3); }
+      38%, 82% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+      90%, 100% { opacity: 0; transform: translate(-20px, -20px) scale(0.5); }
+    }
+
+    @keyframes assembleRightEar {
+      0%, 8% { opacity: 0; transform: translate(35px, -30px) rotate(40deg) scale(0.3); }
+      38%, 82% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+      90%, 100% { opacity: 0; transform: translate(20px, -20px) scale(0.5); }
+    }
+
+    @keyframes assembleHead {
+      0%, 12% { opacity: 0; transform: translateY(-40px) scale(0.4); }
+      40%, 82% { opacity: 1; transform: translateY(0) scale(1); }
+      90%, 100% { opacity: 0; transform: translateY(-15px) scale(0.6); }
+    }
+
+    @keyframes assembleTail {
+      0%, 18% { opacity: 0; transform: translate(-30px, 25px) rotate(-30deg) scale(0.3); }
+      44%, 82% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+      90%, 100% { opacity: 0; transform: translate(-20px, 15px) scale(0.4); }
+    }
+
+    @keyframes assembleTorso {
+      0%, 15% { opacity: 0; transform: translateY(35px) scaleY(0.2); }
+      42%, 82% { opacity: 1; transform: translateY(0) scaleY(1); }
+      90%, 100% { opacity: 0; transform: translateY(20px) scaleY(0.4); }
+    }
+
+    @keyframes glowPulse {
+      0%, 25% { opacity: 0.1; transform: scale(0.7); }
+      45%, 80% { opacity: 1; transform: scale(1.15); }
+      92%, 100% { opacity: 0.1; transform: scale(0.7); }
+    }
+
+    .loader-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .loader-label span {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #c9d1d9;
+    }
+
+    .pulse-bar {
+      width: 90px;
+      height: 2px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pulse-bar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #2f81f7, transparent);
+      animation: barSlide 1.8s infinite ease-in-out;
+    }
+
+    @keyframes barSlide {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* ============================================================ */
+    /* 3. LINKEDIN LOADER (From Linkdin.txt)                        */
+    /* ============================================================ */
+    .linkedin-loader-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      width: 100%;
+      user-select: none;
+    }
+
+    .linkedin-loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 380px;
+      max-width: 95vw;
+    }
+
+    .brand-glow {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 130px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(10, 102, 194, 0.35) 0%, rgba(10, 102, 194, 0.1) 60%, transparent 80%);
+      filter: blur(18px);
+      pointer-events: none;
+      animation: linkedinGlowPulse 3.4s ease-in-out infinite;
+    }
+
+    .linkedin-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 6px 20px rgba(10, 102, 194, 0.15));
+    }
+
+    .glyph,
+    .linkedin-loader .part {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation-duration: 3.4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glyph-L { animation-name: assembleL; }
+    .glyph-i { animation-name: assembleI; }
+    .glyph-n { animation-name: assembleN; }
+    .glyph-k { animation-name: assembleK; }
+    .glyph-e { animation-name: assembleE; }
+    .glyph-d { animation-name: assembleD; }
+    .box-badge { animation-name: assembleBox; }
+    .in-cutout { animation-name: assembleIn; }
+
+    @keyframes assembleL {
+      0%, 4% { opacity: 0; transform: translate(-30px, -20px) scale(0.6) rotate(-10deg); }
+      26%, 82% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleI {
+      0%, 7% { opacity: 0; transform: translateY(-25px) scale(0.4); }
+      29%, 82% { opacity: 1; transform: translateY(0) scale(1); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleN {
+      0%, 10% { opacity: 0; transform: translateY(25px) scale(0.5); }
+      32%, 82% { opacity: 1; transform: translateY(0) scale(1); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleK {
+      0%, 13% { opacity: 0; transform: scale(0.2) rotate(15deg); }
+      35%, 82% { opacity: 1; transform: scale(1) rotate(0deg); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleE {
+      0%, 16% { opacity: 0; transform: translateY(25px) scale(0.5); }
+      38%, 82% { opacity: 1; transform: translateY(0) scale(1); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleD {
+      0%, 19% { opacity: 0; transform: translate(15px, -20px) scale(0.5); }
+      41%, 82% { opacity: 1; transform: translate(0, 0) scale(1); }
+      92%, 100% { opacity: 0; transform: translateY(15px) scale(0.7); }
+    }
+
+    @keyframes assembleBox {
+      0%, 20% { opacity: 0; transform: translate(45px, 0) scale(0.5) rotate(12deg); }
+      45%, 82% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+      92%, 100% { opacity: 0; transform: translate(25px, 0) scale(0.7); }
+    }
+
+    @keyframes assembleIn {
+      0%, 30% { opacity: 0; transform: scale(0.2); }
+      50%, 82% { opacity: 1; transform: scale(1); }
+      92%, 100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    @keyframes linkedinGlowPulse {
+      0%, 30% { opacity: 0.1; transform: scale(0.7); }
+      50%, 80% { opacity: 1; transform: scale(1.15); }
+      92%, 100% { opacity: 0.1; transform: scale(0.7); }
+    }
+
+    .loader-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .status-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #0A66C2;
+      box-shadow: 0 0 8px #0A66C2;
+      animation: pulseDot 1.4s infinite ease-in-out;
+    }
+
+    .status-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #0A66C2;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(0.8); opacity: 0.5; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
       100% {
         transform: translateX(-350px);
       }
@@ -337,7 +609,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           
           <!-- GitHub Card -->
-          <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" class="group block p-6 rounded-3xl bg-white/80 hover:bg-white border border-cream-300 hover:border-taupe-400 shadow-card hover:shadow-elevated transition-all duration-200">
+          <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://github.com/kodo-senpai', 'github', event)" class="group block p-6 rounded-3xl bg-white/80 hover:bg-white border border-cream-300 hover:border-taupe-400 shadow-card hover:shadow-elevated transition-all duration-200">
             <div class="flex items-start justify-between">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-cream-200 flex items-center justify-center text-charcoal-900 group-hover:scale-105 transition-transform">
@@ -358,7 +630,7 @@
           </a>
 
           <!-- LinkedIn Card -->
-          <a href="https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="group block p-6 rounded-3xl bg-white/80 hover:bg-white border border-cream-300 hover:border-taupe-400 shadow-card hover:shadow-elevated transition-all duration-200">
+          <a href="https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'linkedin', event)" class="group block p-6 rounded-3xl bg-white/80 hover:bg-white border border-cream-300 hover:border-taupe-400 shadow-card hover:shadow-elevated transition-all duration-200">
             <div class="flex items-start justify-between">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-[#0077B5]/10 flex items-center justify-center text-[#0077B5] group-hover:scale-105 transition-transform">
@@ -566,7 +838,7 @@
               Live Demo &rarr;
             </a>
 
-            <a href="https://github.com/kodo-senpai/academia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-400 transition-colors">
+            <a href="https://github.com/kodo-senpai/academia" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://github.com/kodo-senpai/academia', 'github', event)" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-400 transition-colors">
               <svg class="w-4 h-4 text-charcoal-900" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
               </svg>
@@ -627,7 +899,7 @@
         </div>
 
         <div class="pt-2">
-          <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] shadow-sm hover:shadow transition-all">
+          <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://github.com/kodo-senpai', 'github', event)" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] shadow-sm hover:shadow transition-all">
             <svg class="w-4 h-4 text-charcoal-900" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
             </svg>
@@ -673,7 +945,7 @@
                 <p class="text-sm text-charcoal-800/80">@kodo-senpai</p>
               </div>
             </div>
-            <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] transition-colors">
+            <a href="https://github.com/kodo-senpai" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://github.com/kodo-senpai', 'github', event)" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] transition-colors">
               Follow on GitHub &rarr;
             </a>
           </div>
@@ -692,7 +964,7 @@
                 <p class="text-xs text-charcoal-800/60 mt-0.5">Data Science Undergrad · CGCU</p>
               </div>
             </div>
-            <a href="https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] transition-colors">
+            <a href="https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" onclick="openExternalWithLoader('https://www.linkedin.com/in/priyanshu-sharma-bbb76a421?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'linkedin', event)" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold bg-[#EAE0D5] hover:bg-[#E0D2C3] text-charcoal-900 border border-[#D5C5B5] transition-colors">
               Connect on LinkedIn &rarr;
             </a>
           </div>
@@ -821,139 +1093,116 @@
     </div>
   </footer>
 
-  <!-- ==================== 3-SECOND FULLSCREEN PAGE LOADER ==================== -->
-  <div id="page-loader-overlay" class="fixed inset-0 z-[100] hidden bg-cream-100/95 backdrop-blur-sm flex-col items-center justify-center transition-all duration-300">
-    <!-- From Uiverse.io by vinodjangid07 -->
-    <div class="loader">
-      <div class="truckWrapper">
-        <div class="truckBody">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 198 93"
-            class="trucksvg"
-          >
-            <path
-              stroke-width="3"
-              stroke="#282828"
-              fill="#F83D3D"
-              d="M135 22.5H177.264C178.295 22.5 179.22 23.133 179.594 24.0939L192.33 56.8443C192.442 57.1332 192.5 57.4404 192.5 57.7504V89C192.5 90.3807 191.381 91.5 190 91.5H135C133.619 91.5 132.5 90.3807 132.5 89V25C132.5 23.6193 133.619 22.5 135 22.5Z"
-            ></path>
-            <path
-              stroke-width="3"
-              stroke="#282828"
-              fill="#7D7C7C"
-              d="M146 33.5H181.741C182.779 33.5 183.709 34.1415 184.078 35.112L190.538 52.112C191.16 53.748 189.951 55.5 188.201 55.5H146C144.619 55.5 143.5 54.3807 143.5 53V36C143.5 34.6193 144.619 33.5 146 33.5Z"
-            ></path>
-            <path
-              stroke-width="2"
-              stroke="#282828"
-              fill="#282828"
-              d="M150 65C150 65.39 149.763 65.8656 149.127 66.2893C148.499 66.7083 147.573 67 146.5 67C145.427 67 144.501 66.7083 143.873 66.2893C143.237 65.8656 143 65.39 143 65C143 64.61 143.237 64.1344 143.873 63.7107C144.501 63.2917 145.427 63 146.5 63C147.573 63 148.499 63.2917 149.127 63.7107C149.763 64.1344 150 64.61 150 65Z"
-            ></path>
-            <rect
-              stroke-width="2"
-              stroke="#282828"
-              fill="#FFFCAB"
-              rx="1"
-              height="7"
-              width="5"
-              y="63"
-              x="187"
-            ></rect>
-            <rect
-              stroke-width="2"
-              stroke="#282828"
-              fill="#282828"
-              rx="1"
-              height="11"
-              width="4"
-              y="81"
-              x="193"
-            ></rect>
-            <rect
-              stroke-width="3"
-              stroke="#282828"
-              fill="#DFDFDF"
-              rx="2.5"
-              height="90"
-              width="121"
-              y="1.5"
-              x="6.5"
-            ></rect>
-            <rect
-              stroke-width="2"
-              stroke="#282828"
-              fill="#DFDFDF"
-              rx="2"
-              height="4"
-              width="6"
-              y="84"
-              x="1"
-            ></rect>
+  <!-- ==================== DYNAMIC MULTI-LOADER OVERLAY ==================== -->
+  <div id="page-loader-overlay" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center transition-all duration-300">
+    
+    <!-- 1. Truck Loader (for normal page switches - 1.7s) -->
+    <div id="loader-truck" class="hidden flex-col items-center justify-center">
+      <div class="loader">
+        <div class="truckWrapper">
+          <div class="truckBody">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 198 93"
+              class="trucksvg"
+            >
+              <path
+                stroke-width="3"
+                stroke="#282828"
+                fill="#F83D3D"
+                d="M135 22.5H177.264C178.295 22.5 179.22 23.133 179.594 24.0939L192.33 56.8443C192.442 57.1332 192.5 57.4404 192.5 57.7504V89C192.5 90.3807 191.381 91.5 190 91.5H135C133.619 91.5 132.5 90.3807 132.5 89V25C132.5 23.6193 133.619 22.5 135 22.5Z"
+              ></path>
+              <path
+                stroke-width="3"
+                stroke="#282828"
+                fill="#7D7C7C"
+                d="M146 33.5H181.741C182.779 33.5 183.709 34.1415 184.078 35.112L190.538 52.112C191.16 53.748 189.951 55.5 188.201 55.5H146C144.619 55.5 143.5 54.3807 143.5 53V36C143.5 34.6193 144.619 33.5 146 33.5Z"
+              ></path>
+              <path
+                stroke-width="2"
+                stroke="#282828"
+                fill="#282828"
+                d="M150 65C150 65.39 149.763 65.8656 149.127 66.2893C148.499 66.7083 147.573 67 146.5 67C145.427 67 144.501 66.7083 143.873 66.2893C143.237 65.8656 143 65.39 143 65C143 64.61 143.237 64.1344 143.873 63.7107C144.501 63.2917 145.427 63 146.5 63C147.573 63 148.499 63.2917 149.127 63.7107C149.763 64.1344 150 64.61 150 65Z"
+              ></path>
+              <rect stroke-width="2" stroke="#282828" fill="#FFFCAB" rx="1" height="7" width="5" y="63" x="187"></rect>
+              <rect stroke-width="2" stroke="#282828" fill="#282828" rx="1" height="11" width="4" y="81" x="193"></rect>
+              <rect stroke-width="3" stroke="#282828" fill="#DFDFDF" rx="2.5" height="90" width="121" y="1.5" x="6.5"></rect>
+              <rect stroke-width="2" stroke="#282828" fill="#DFDFDF" rx="2" height="4" width="6" y="84" x="1"></rect>
+            </svg>
+          </div>
+          <div class="truckTires">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+              <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+              <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+              <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+              <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+            </svg>
+          </div>
+          <div class="road"></div>
+          <svg xml:space="preserve" viewBox="0 0 453.459 453.459" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="#000000" class="lampPost">
+            <path d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993 c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514 c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16 c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914 h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75 v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795 V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017 h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
           </svg>
         </div>
-        <div class="truckTires">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 30 30"
-            class="tiresvg"
-          >
-            <circle
-              stroke-width="3"
-              stroke="#282828"
-              fill="#282828"
-              r="13.5"
-              cy="15"
-              cx="15"
-            ></circle>
-            <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 30 30"
-            class="tiresvg"
-          >
-            <circle
-              stroke-width="3"
-              stroke="#282828"
-              fill="#282828"
-              r="13.5"
-              cy="15"
-              cx="15"
-            ></circle>
-            <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
-          </svg>
-        </div>
-        <div class="road"></div>
+      </div>
+      <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-charcoal-800/70 animate-pulse">Loading...</p>
+    </div>
 
-        <svg
-          xml:space="preserve"
-          viewBox="0 0 453.459 453.459"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
-          id="Capa_1"
-          version="1.1"
-          fill="#000000"
-          class="lampPost"
-        >
-          <path
-            d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993
-c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514
-c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16
-c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914
-h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75
-v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795
-V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z
-M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017
-h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
-          ></path>
-        </svg>
+    <!-- 2. GitHub Loader (for Projects tab & GitHub links - 3s) -->
+    <div id="loader-github" class="hidden flex-col items-center justify-center">
+      <div class="github-loader-wrapper">
+        <div class="github-loader">
+          <div class="github-glow"></div>
+          <svg viewBox="0 0 100 100" class="github-svg" xmlns="http://www.w3.org/2000/svg">
+            <circle class="part part-circle" cx="50" cy="50" r="44" fill="#000000" />
+            <path class="part part-ear-left" d="M26.2 32.2 C24.5 25.8 23.5 20.2 24.2 19.8 C26.2 18.8 33.2 21.8 38.6 25.6 Z" fill="#ffffff" />
+            <path class="part part-ear-right" d="M73.8 32.2 C75.5 25.8 76.5 20.2 75.8 19.8 C73.8 18.8 66.8 21.8 61.4 25.6 Z" fill="#ffffff" />
+            <path class="part part-head" d="M36 24 C45 22 55 22 64 24 C74 27 77 37 76 46 C74 57 66 65 57 67 C53 68 47 68 43 67 C34 65 26 57 24 46 C23 37 26 27 36 24 Z" fill="#ffffff" />
+            <path class="part part-tail" d="M22 64.5 C26 64 30.5 67 36.5 72.5 C40 75.5 40 76.5 39 76.8 C30.5 76 25 71.5 22 64.5 Z" fill="#ffffff" />
+            <path class="part part-torso" d="M40 66 H60 C58 75 58 84 58 87 H40 C40 84 40 75 40 66 Z" fill="#ffffff" />
+          </svg>
+          <div class="loader-label">
+            <span>CONNECTING TO GITHUB</span>
+            <div class="pulse-bar"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-charcoal-800/70 animate-pulse">Loading...</p>
+
+    <!-- 3. LinkedIn Loader (for LinkedIn links - 3s) -->
+    <div id="loader-linkedin" class="hidden flex-col items-center justify-center">
+      <div class="linkedin-loader-wrapper">
+        <div class="linkedin-loader">
+          <div class="brand-glow"></div>
+          <svg viewBox="0 0 420 110" class="linkedin-svg" xmlns="http://www.w3.org/2000/svg">
+            <g class="word-linked">
+              <path class="glyph glyph-L" d="M 15 15 H 32 V 76 H 60 V 92 H 15 Z" fill="#0A66C2" />
+              <g class="glyph glyph-i">
+                <circle cx="78" cy="23" r="8.5" fill="#0A66C2" />
+                <rect x="70" y="38" width="16" height="54" rx="2" fill="#0A66C2" />
+              </g>
+              <path class="glyph glyph-n" d="M 103 38 H 119 V 47 C 124 40 133 36 144 36 C 160 36 169 46 169 63 V 92 H 153 V 66 C 153 56 148 50 139 50 C 128 50 119 57 119 69 V 92 H 103 Z" fill="#0A66C2" />
+              <path class="glyph glyph-k" d="M 183 15 H 199 V 53 L 217 38 H 237 L 213 58 L 239 92 H 218 L 199 67 V 92 H 183 Z" fill="#0A66C2" />
+              <path class="glyph glyph-e" d="M 256 36 C 274 36 288 48 288 66 V 70 H 255 C 256 78 262 82 271 82 C 278 82 283 79 286 74 H 301 C 297 86 285 94 269 94 C 250 94 238 81 238 65 C 238 48 250 36 256 36 Z M 272 57 C 271 50 266 46 258 46 C 251 46 246 51 245 57 Z" fill="#0A66C2" />
+              <path class="glyph glyph-d" d="M 334 15 H 350 V 92 H 335 V 83 C 330 90 321 94 311 94 C 294 94 282 81 282 65 C 282 48 294 36 311 36 C 321 36 329 40 334 47 Z M 316 80 C 325 80 334 73 334 65 C 334 56 325 50 316 50 C 307 50 299 57 299 65 C 299 73 307 80 316 80 Z" fill="#0A66C2" />
+            </g>
+            <rect class="part box-badge" x="365" y="12" width="86" height="86" rx="18" fill="#0A66C2" />
+            <g class="part in-cutout">
+              <circle cx="388" cy="30" r="7.5" fill="#ffffff" />
+              <rect x="381" y="44" width="14" height="42" rx="1.5" fill="#ffffff" />
+              <path d="M 405 44 H 419 V 51 C 423 45 431 42 440 42 C 452 42 460 50 460 64 V 86 H 446 V 66 C 446 58 442 53 434 53 C 425 53 419 59 419 69 V 86 H 405 Z" fill="#ffffff" />
+            </g>
+          </svg>
+          <div class="loader-status">
+            <div class="status-indicator"></div>
+            <span class="status-text">CONNECTING NETWORK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ==================== CV PREVIEW MODAL ==================== -->
@@ -1013,8 +1262,44 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
 
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
-    // Tab switching logic with 3-second loader
+    // ============================================================
+    // TAB SWITCHING & DYNAMIC MULTI-LOADER SYSTEM
+    // ============================================================
     let isPageLoading = false;
+
+    function showLoader(type) {
+      const overlay = document.getElementById('page-loader-overlay');
+      const truckLoader = document.getElementById('loader-truck');
+      const githubLoader = document.getElementById('loader-github');
+      const linkedinLoader = document.getElementById('loader-linkedin');
+
+      if (!overlay) return;
+
+      // Hide all loader components
+      if (truckLoader) truckLoader.classList.add('hidden');
+      if (githubLoader) githubLoader.classList.add('hidden');
+      if (linkedinLoader) linkedinLoader.classList.add('hidden');
+
+      // Set tailored overlay theme based on loader type
+      if (type === 'github') {
+        overlay.className = 'fixed inset-0 z-[100] flex flex-col items-center justify-center transition-all duration-300 bg-[#0d1117]/95 backdrop-blur-md text-white';
+        if (githubLoader) githubLoader.classList.remove('hidden');
+      } else if (type === 'linkedin') {
+        overlay.className = 'fixed inset-0 z-[100] flex flex-col items-center justify-center transition-all duration-300 bg-[#FAF8F5]/95 backdrop-blur-md text-charcoal-900';
+        if (linkedinLoader) linkedinLoader.classList.remove('hidden');
+      } else {
+        overlay.className = 'fixed inset-0 z-[100] flex flex-col items-center justify-center transition-all duration-300 bg-cream-100/95 backdrop-blur-sm text-charcoal-900';
+        if (truckLoader) truckLoader.classList.remove('hidden');
+      }
+    }
+
+    function hideLoader() {
+      const overlay = document.getElementById('page-loader-overlay');
+      if (overlay) {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+      }
+    }
 
     function applyTabChange(tabName) {
       document.querySelectorAll('.tab-pane').forEach(pane => {
@@ -1060,21 +1345,32 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
         return;
       }
 
-      // Show 3-second loading screen with truck component
       isPageLoading = true;
-      const loaderOverlay = document.getElementById('page-loader-overlay');
-      if (loaderOverlay) {
-        loaderOverlay.classList.remove('hidden');
-        loaderOverlay.classList.add('flex');
-      }
+      const isProjects = (tabName === 'projects');
+      const loaderType = isProjects ? 'github' : 'truck';
+      const duration = isProjects ? 3000 : 1700; // Projects uses GitHub loader for 3s, other tabs use Truck for 1.7s
+
+      showLoader(loaderType);
 
       setTimeout(() => {
         applyTabChange(tabName);
-        if (loaderOverlay) {
-          loaderOverlay.classList.add('hidden');
-          loaderOverlay.classList.remove('flex');
-        }
+        hideLoader();
         isPageLoading = false;
+      }, duration);
+    }
+
+    // Handler for external GitHub and LinkedIn links with 3-second loader
+    function openExternalWithLoader(url, type, event) {
+      if (event) event.preventDefault();
+      if (isPageLoading) return;
+
+      isPageLoading = true;
+      showLoader(type);
+
+      setTimeout(() => {
+        hideLoader();
+        isPageLoading = false;
+        window.open(url, '_blank', 'noopener,noreferrer');
       }, 3000);
     }
 
